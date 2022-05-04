@@ -8,10 +8,10 @@ public:
         }        
         
         int size = m + n - 1;
+        int n2 = n - 1;
         int n1 = m - 1;
         // if n1 = -1, replace all zeros in nums1 by nums2 elements.
         if(n1 == -1) for(int i = 0; i < n; i++) nums1[i] = nums2[i];
-        int n2 = n - 1;
         
         // start filling nums1 from the back
         while(size >= 0) {
@@ -24,13 +24,12 @@ public:
                 nums1[size] = nums2[n2];
                 size--;
                 n2--;
-            }else {
+            } else {
                 nums1[size] = nums1[n1];
                 nums1[n1] = nums2[n2];
                 size--;
                 n1--;
             }
         }
-        return;
     }
 };
